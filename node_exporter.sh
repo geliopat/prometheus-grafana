@@ -7,11 +7,11 @@ fi
 
 echo 'LOG: Download node exporter package, placed into /opt'
 cd /opt
-wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.11.1/node_exporter-1.11.1.linux-amd64.tar.gz
 
 echo 'LOG: Extract node exporter'
-tar xvfz node_exporter-0.18.1.linux-amd64.tar.gz
-cd node_exporter-0.18.1.linux-amd64
+tar xvfz node_exporter-1.11.1.linux-amd64.tar.gz
+cd node_exporter-1.11.1.linux-amd64
 
 echo 'Create node exporter service into /etc/systemd/system/node_exporter.service'
 cat > /etc/systemd/system/node_exporter.service << EOF
@@ -20,7 +20,7 @@ Description=Node Exporter
 
 [Service]
 User=root
-ExecStart=/opt/node_exporter-0.18.1.linux-amd64/node_exporter
+ExecStart=/opt/node_exporter-1.11.1.linux-amd64/node_exporter
 
 [Install]
 WantedBy=default.target
